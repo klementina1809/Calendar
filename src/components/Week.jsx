@@ -4,14 +4,13 @@ import Day from "./Day";
 function Week({ firstDay, firstNumber }) {
 	const getWeek = () => {
 		let week = [];
-		const lastIndex = 7 - (firstDay - 1);
-		for (let i = 1; i < firstDay; i++) {
-			week.push("");
-		}
-		for (let i = 0; i < lastIndex; i++) {
-			week.push(firstNumber);
-			firstNumber++;
-		}
+		for (let i = 1; i <= 7; i++) {
+			if (i < firstDay) {
+				week.push("");
+			} else {
+				week.push(firstNumber);
+				firstNumber++;
+			}}
 		return week;
 	};
 

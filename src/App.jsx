@@ -8,7 +8,7 @@ function App() {
 
   return (
     <>
-      <Week firstDay={2} firstNumber={11}/>
+      <Week firstDay={3} firstNumber={12}/>
     </>
   )
 }
