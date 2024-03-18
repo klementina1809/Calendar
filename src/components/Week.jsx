@@ -1,6 +1,5 @@
 import React from "react";
 import Day from "./Day";
-import _ from "lodash";
 
 function Week({ firstDay, firstNumber }) {
 	const getWeek = () => {
@@ -18,9 +17,13 @@ function Week({ firstDay, firstNumber }) {
 
 	return (
 		<div className="week">
-			{getWeek().map((n) => (
-				<Day number={n} isWeekend={false} />
-			))}
+			{getWeek().map((n, index) => {
+				return index === 5 || index === 6 ? (
+					<Day number={n} isWeekend={true} />
+				) : (
+					<Day number={n} isWeekend={false} />
+				);
+			})}
 		</div>
 	);
 }
