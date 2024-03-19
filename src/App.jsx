@@ -1,6 +1,6 @@
 import { useState } from 'react'
-import Day from './components/Day'
-import Week from './components/Week'
+
+import Month from './components/Month'
 import './App.css'
 
 function App() {
@@ -8,7 +8,7 @@ function App() {
 
   return (
     <>
-      <Week firstDay={3} firstNumber={12}/>
+      <Month firstDay={2} days={28}/>
     </>
   )
 }
