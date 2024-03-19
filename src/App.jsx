@@ -8,7 +8,7 @@ function App() {
 
   return (
     <>
-      <Month firstDay={2} days={28}/>
+      <Month firstDay={2} days={29}/>
     </>
   )
 }

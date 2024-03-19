@@ -31,8 +31,8 @@ background-color: rgba(245, 245, 220, 0.918);
 
 .week {
   display: flex;
-  flex-wrap: wrap;
-  width: 365px;
+  /* flex-wrap: wrap;
+  width: 365px; */
 }
 /* month page */
 
