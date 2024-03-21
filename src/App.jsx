@@ -9,7 +9,7 @@ function App() {
 
   return (
     <>
-    <Year isLeap={true} firstDay={1} year={2023}/>
+    <Year/>
       
     </>
   )
