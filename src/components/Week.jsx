@@ -1,18 +1,18 @@
 import React from "react";
 import Day from "./Day";
 
-function Week({ firstDay, firstNumber, days}) {
+function Week({ firstDay, firstNumber, lastNumber }) {
 	const getWeek = () => {
+		let number = firstNumber;
 		let week = [];
 		for (let i = 1; i <= 7; i++) {
 			if (i < firstDay) {
 				week.push("");
 			} else {
-				if(firstNumber<=days) {
-
-					week.push(firstNumber);
-					firstNumber++;
-				} else week.push('');
+				if (number <= lastNumber) {
+					week.push(number);
+					number++;
+				} else week.push("");
 			}
 		}
 		return week;
@@ -20,14 +20,13 @@ function Week({ firstDay, firstNumber, days}) {
 
 	return (
 		<div className="week">
-			{getWeek().map((n, index) => {
-				return index === 5 ||
-					index === 6 ? (
-					<Day number={n} isWeekend={true} />
-				) : (
-					<Day number={n} isWeekend={false} />
-				);
-			})}
+			{getWeek().map((n, index) => (
+				<Day
+					key={index}
+					number={n}
+					isWeekend={index === 5 || index === 6}
+				/>
+			))}
 		</div>
 	);
 }

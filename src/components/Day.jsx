@@ -1,15 +1,12 @@
 import React from "react";
 
 function Day({ number, isWeekend }) {
-
-	const getNumberClass = () => {
-    console.log(number);
-		if (isWeekend) return "number red";
-		if (!isWeekend) return "number black";
+	const getColor = () => {
+		return isWeekend ? "red" : "black";
 	};
 	return (
 		<div className="day">
-			<span className={getNumberClass()}>{number}</span>
+			<span className={"number " + getColor()}>{number}</span>
 		</div>
 	);
 }
