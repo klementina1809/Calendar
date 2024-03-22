@@ -1,7 +1,7 @@
-import React, { useState } from "react";
+import React from "react";
 import Month from "./Month";
 
-function Year() {
+function Year({year}) {
 	const months = [
 		{ name: "January", days: 31 },
 		{ name: "February", days: 28 },
@@ -17,9 +17,7 @@ function Year() {
 		{ name: "December", days: 31 },
 	];
 
-	const yearN = 2021;
-
-	const getFirstDayOfYear = (year) => {
+	const getFirstDayOfYear = () => {
 		const d = new Date(year, 0, 1);
 		const firstDay = d.getDay();
 		return firstDay;
@@ -30,17 +28,14 @@ function Year() {
 		let currentDay;
 
 		const getCurrentDay = (month) => {
-			const delta = months[month].days - 28;
+			const delta = months[month-1].days - 28;
 			let result = currentDay + delta;
 			if (result > 7) result -= 7;
-			console.log("firstday", result);
-			console.log("---------", currentDay);
 			return result;
 		};
 
 		for (let i = 0; i < 12; i++) {
-			currentDay = i === 0 ? getFirstDayOfYear(yearN) : getCurrentDay(i);
-			console.log("firstday2", currentDay);
+			currentDay = i === 0 ? getFirstDayOfYear() : getCurrentDay(i);
 
 			year.push(
 				<Month

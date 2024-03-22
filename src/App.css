@@ -36,10 +36,11 @@ background-color: rgba(245, 245, 220, 0.918);
 }
 /* month page */
 
-.day-of-week {
-
-  margin-right: 26px;
+.days-of-week {
+  display: flex;
+  justify-content: space-around;
 }
+
 /* year page */
 
 .year {

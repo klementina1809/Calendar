@@ -26,11 +26,13 @@ function Month({ firstDay, days, name }) {
 	return (
 		<div>
 			<h2>{name}</h2>
-			{days_of_week.map((d) => (
-				<span className="day-of-week" key={d}>
-					{d}
-				</span>
-			))}
+			<div className="days-of-week">
+				{days_of_week.map((d) => (
+					<span  key={d}>
+						{d}
+					</span>
+				))}
+			</div>
 			{getMonth()}
 		</div>
 	);
