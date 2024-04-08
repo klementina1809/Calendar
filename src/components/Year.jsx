@@ -1,10 +1,14 @@
 import React from "react";
 import Month from "./Month";
 
-function Year({year}) {
+const isLeapYear = (year) => {
+	return (year % 4 === 0 && year % 100 !== 0) || year % 400 === 0;
+};
+
+function Year({ year }) {
 	const months = [
 		{ name: "January", days: 31 },
-		{ name: "February", days: 28 },
+		{ name: "February", days: isLeapYear(year) ? 29 : 28 },
 		{ name: "March", days: 31 },
 		{ name: "April", days: 30 },
 		{ name: "May", days: 31 },
@@ -24,20 +28,27 @@ function Year({year}) {
 	};
 
 	const getYear = () => {
-		const year = [];
+		const yearArr = [];
 		let currentDay;
 
+		// const getCurrentDay = (month) => {
+		// 	const delta = months[month].days - 28;
+		// 	let result = currentDay + delta;
+		// 	if (result > 7) result -= 7;
+		// 	return result;
+		// };
+
 		const getCurrentDay = (month) => {
-			const delta = months[month-1].days - 28;
-			let result = currentDay + delta;
-			if (result > 7) result -= 7;
-			return result;
-		};
+      const delta = months[month].days % 7;
+      let result = currentDay + delta;
+      if (result > 7) result -= 7;
+      return result;
+    };
 
 		for (let i = 0; i < 12; i++) {
 			currentDay = i === 0 ? getFirstDayOfYear() : getCurrentDay(i);
 
-			year.push(
+			yearArr.push(
 				<Month
 					key={i}
 					firstDay={currentDay}
@@ -47,7 +58,7 @@ function Year({year}) {
 			);
 		}
 
-		return year;
+		return yearArr;
 	};
 
 	return <div className="year">{getYear()}</div>;

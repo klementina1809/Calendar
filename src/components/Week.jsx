@@ -5,8 +5,8 @@ function Week({ firstDay, firstNumber, lastNumber }) {
 	const getWeek = () => {
 		let number = firstNumber;
 		let week = [];
-		for (let i = 1; i <= 7; i++) {
-			if (i < firstDay) {
+		for (let i = 1; i < 7; i++) {
+			if (i < firstDay-1) {
 				week.push("");
 			} else {
 				if (number <= lastNumber) {
