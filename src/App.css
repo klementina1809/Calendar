@@ -45,6 +45,7 @@ background-color: rgba(245, 245, 220, 0.918);
 
 .year {
   display: flex;
+  justify-content: center;
   flex-wrap: wrap;
   gap: 40px;
 }
