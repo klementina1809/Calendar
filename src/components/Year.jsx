@@ -32,14 +32,14 @@ function Year({ year }) {
 		let currentDay;
 
 		// const getCurrentDay = (month) => {
-		// 	const delta = months[month].days - 28;
+		// 	const delta = months[month-1].days - 28;
 		// 	let result = currentDay + delta;
 		// 	if (result > 7) result -= 7;
 		// 	return result;
 		// };
 
 		const getCurrentDay = (month) => {
-      const delta = months[month].days % 7;
+      const delta = months[month-1].days % 7;
       let result = currentDay + delta;
       if (result > 7) result -= 7;
       return result;
