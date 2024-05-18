@@ -39,11 +39,11 @@ function Year({ year }) {
 		// };
 
 		const getCurrentDay = (month) => {
-      const delta = months[month-1].days % 7;
-      let result = currentDay + delta;
-      if (result > 7) result -= 7;
-      return result;
-    };
+			const delta = months[month - 1].days % 7;
+			let result = currentDay + delta;
+			if (result > 7) result -= 7;
+			return result;
+		};
 
 		for (let i = 0; i < 12; i++) {
 			currentDay = i === 0 ? getFirstDayOfYear() : getCurrentDay(i);
