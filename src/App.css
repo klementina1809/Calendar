@@ -1,51 +1,58 @@
 #root {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
-  text-align: center;
+	max-width: 1280px;
+	margin: 0 auto;
+	padding: 2rem;
+	text-align: center;
 }
 
+select {
+	background-color: #d1ba97;
+	border: none;
+	height: 40px;
+	padding: 10px;
+	color: black;
+}
 .day {
-  width: 50px;
-  height: 50px;
-border: 1px solid black;
-background-color: rgba(245, 245, 220, 0.918);
+	width: 50px;
+	height: 50px;
+	border: 1px solid black;
+	background-color: #d1ba97;
 }
 
 .number {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 100%;
-  height: 100%;
-  font-weight: 700;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	width: 100%;
+	height: 100%;
+	font-weight: 700;
 }
 .red {
-  color: red !important;
+	color: red !important;
 }
 .black {
-  color: rgb(0, 0, 0) !important;
+	color: rgb(0, 0, 0) !important;
 }
 
 /* week page */
 
 .week {
-  display: flex;
-  /* flex-wrap: wrap;
+	display: flex;
+	/* flex-wrap: wrap;
   width: 365px; */
 }
 /* month page */
 
 .days-of-week {
-  display: flex;
-  justify-content: space-around;
+	display: flex;
+	justify-content: space-around;
 }
 
 /* year page */
 
 .year {
-  display: flex;
-  justify-content: center;
-  flex-wrap: wrap;
-  gap: 40px;
+	display: flex;
+	justify-content: center;
+	flex-wrap: wrap;
+	gap: 40px;
 }
